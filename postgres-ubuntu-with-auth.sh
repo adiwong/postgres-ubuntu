@@ -6,7 +6,7 @@ postgresPassword=$2
 sudo apt update
 sudo apt-get -y install postgresql postgresql-contrib
 sudo -i -u postgres
-createUserstatement="CREATE USER $postgresAdmin WITH PASSWORD '$postgresPassword';"
+createUserstatement="CREATE USER $postgresAdmin SUPERUSER WITH PASSWORD '$postgresPassword';"
 sudo -u postgres psql -c "$createUserstatement"
 
 # change to allow remote connection
